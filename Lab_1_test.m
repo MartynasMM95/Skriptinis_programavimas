@@ -5,7 +5,7 @@
 
 clc
 clear all variables
-
+format short
 N = 7;
 v = N+1:0.5:N+4;
 A = [
@@ -29,8 +29,8 @@ A2 = A(2:3, 1:2);
 
 B3 = A([1 3] , [1 3]);
 
-
 % UZDUOTIS 
 % B = [A; v(1:3);v(4:6)];
  c = reshape(v(1:6), [3, 2]);
- B = [A c];
+ B = [A c]
+ %komentarassss
