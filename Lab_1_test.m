@@ -34,4 +34,4 @@ B3 = A([1 3] , [1 3]);
  c = reshape(v(1:6), [3, 2]);
  B = [A c]
  %komentarassss testasssssssssssssdddgjj
- % TEST
+ % TEST ttt
