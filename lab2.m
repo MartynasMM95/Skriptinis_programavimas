@@ -1,0 +1,74 @@
+% Lab2 var1
+clc, clearvars
+
+format long e
+
+% Vienamaciai masyvai
+% A
+A = 5:2:34;
+K = ones(1,length(A));
+
+% B
+B = (exp(1)*K).^A;
+% B = exp(A);
+
+% C
+C = A./B;
+disp('  Matrix A                     Matrix B                    Matrix C\n');
+disp([A' B' C']) ;
+% disp([C'])
+
+% Dvimačiai masyvai
+%A
+Anew = [pi/2, 3i;
+    log(2), 2*pi;
+    ];
+%format short
+%B
+Bnew = [A(1,1) A(1,2)];
+C = [Anew;  Bnew];
+
+%C
+
+sum(C, 2)
+
+% Praktinis veiksmų su masyvais taikymas
+
+% Variables definition
+A = 5;
+f = 5;
+o = 1.5;
+U1 = 3;
+U2 = 2;
+t = 0:0.001:1;
+
+% Signal without noise
+s = A*sin(2*pi*f*t);
+
+% Random noise
+n = o*rand(size(t));
+
+% Signal with noise
+S = s + n;
+
+% Logical indexing
+% A
+S_lim = S(S > U1);
+% B
+S_filtered = S;
+S(abs(S) < U2) = 0;
+% C
+num_sampl_filtered = length(S_filtered);
+% D
+num_sampl_selected = length(S_filtered);
+% E
+U_min = min(S_filtered);
+U_max = max(S_filtered);
+
+fprintf('Minimum voltage value: %.2f V\n', U_min);
+fprintf('Maximum voltage value: %.2f V\n', U_max);
+
+
+% Conpulsory task
+AA = [1 2 3 4 5 6 7 8 9 10 11 12];
+BB = [AA(10:12) AA(1:9)];
